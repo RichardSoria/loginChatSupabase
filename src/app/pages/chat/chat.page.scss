@@ -1,0 +1,37 @@
+.messages-wrapper {
+    height: calc(100vh - 112px);
+    padding: 10px 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--ion-background-color);
+}
+
+.message {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    background: var(--ion-color-light);
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    word-wrap: break-word;
+    line-height: 1.4;
+    font-size: 1rem;
+    color: var(--ion-color-dark);
+}
+
+/* Para destacar quien envía el mensaje */
+.message-sender {
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--ion-color-primary);
+}
+
+
+ion-input input {
+    /* para iOS y otros */
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}

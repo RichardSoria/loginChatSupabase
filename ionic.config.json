@@ -1,0 +1,7 @@
+{
+  "name": "loginChatSupabase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
