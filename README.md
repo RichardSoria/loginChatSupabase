@@ -1,6 +1,6 @@
-# 📁 LoginFilesSupabase
-
-Este proyecto fue construido **desde cero** utilizando Ionic + Angular (con Standalone Components) y Supabase para la autenticación y gestión de archivos con visualización en tiempo real.
+# 🔐 LoginChatSupabase
+Add commentMore actions
+Este proyecto fue construido **desde cero** utilizando Ionic + Angular (con Standalone Components) y Supabase para la autenticación y mensajería en tiempo real.
 
 A continuación, se describen todos los pasos, componentes y funcionalidades implementadas.
 
@@ -8,11 +8,13 @@ A continuación, se describen todos los pasos, componentes y funcionalidades imp
 
 ## 🧱 Creación del Proyecto
 
-El proyecto fue creado con el siguiente comando:
+El proyecto fue creado desde cero con el siguiente comando:
 
 ```bash
-ionic start LoginFilesSupabase blank --type=angular
+ionic start LoginChatSupabase blank --type=angular
 ```
+
+Se eligió una plantilla en blanco para trabajar con mayor control.
 
 ---
 
@@ -32,19 +34,20 @@ El proyecto cuenta con las siguientes páginas y servicios:
 
 ---
 
-### 🔐 Auth Page (Autenticación)
+### 📄 Auth Page (Autenticación)
 
 - Registro de usuario
-- Inicio y cierre de sesión
-- Validación de formularios:
+- Inicio de sesión
+- Cierre de sesión
+- Validación de formulario:
   - Email requerido y con formato válido
   - Contraseña requerida
 - Uso de:
   - Spinners de carga
   - Alertas (`showDataAlert`)
-  - Diseño limpio y funcional
+  - Diseño simple y funcional
 
-📸 **Capturas de autenticación**
+📸 **Captura del login y/o formulario de registro**
 
 ![image](https://github.com/user-attachments/assets/f77ae4eb-32d3-49eb-91db-5c5da67b62b2)
 
@@ -64,102 +67,74 @@ El proyecto cuenta con las siguientes páginas y servicios:
 
 ---
 
-### 📁 Files Page (Gestión de Archivos)
+### 💬 Chat Page (Mensajería en Tiempo Real)
 
-- Visualización en lista de archivos subidos
-- Miniatura e información del archivo (nombre y título)
-- Carga de archivos desde un modal
-- Eliminación de archivos
-- Botón flotante para subir nuevos archivos
-- Comportamiento visual tipo "galería ligera"
+- Visualización de mensajes en tiempo real
+- Campo de texto para nuevos mensajes
+- Usuario conectado visible
+- Animaciones de entrada de mensajes
 
-📸 **Capturas de la interfaz de archivos**
+📸 **Captura de la pantalla del chat**
 
-![image](https://github.com/user-attachments/assets/118eef9a-c185-4ae5-a2d4-e99e09903852)
+![image](https://github.com/user-attachments/assets/2cd9fd41-fa35-4dac-9d6b-9ca1af57e3bb)
 
-![image](https://github.com/user-attachments/assets/f87d7b34-da46-4685-b5e5-09a21885230f)
+![image](https://github.com/user-attachments/assets/63bc0357-5c3a-4a35-96fb-362c24d2c7c3)
 
-![image](https://github.com/user-attachments/assets/30635382-ed5e-47fd-be9d-0ff478696ddc)
+![image](https://github.com/user-attachments/assets/7479e811-be5b-4995-95e7-eaeec52fe9f4)
 
-![image](https://github.com/user-attachments/assets/a9788361-7ab7-4e70-81c9-f25d16ad4b6b)
+![image](https://github.com/user-attachments/assets/50962721-bae8-4b52-ad1d-d2a98b455653)
 
-![image](https://github.com/user-attachments/assets/81b2d733-547b-430b-8d19-fd800d119f54)
+![image](https://github.com/user-attachments/assets/7031ef58-ec97-498d-b64a-c433f9390704)
 
-![image](https://github.com/user-attachments/assets/b3c375f5-fcfe-4c9d-99ff-532a6e4ae405)
-
-![image](https://github.com/user-attachments/assets/a151c215-fdd8-4047-a511-a3d22213dad8)
-
-![image](https://github.com/user-attachments/assets/00d4e446-30f9-4dc7-8139-85c36014f333)
-
-![image](https://github.com/user-attachments/assets/7ea9cfcc-4928-4d3f-b305-ba955d482519)
-
-![image](https://github.com/user-attachments/assets/af02c929-215f-4030-9907-4f5b7366fc90)
-
-![image](https://github.com/user-attachments/assets/a8a50db7-8b01-4050-8489-fadd2b48e8fd)
-
-![image](https://github.com/user-attachments/assets/4f33530b-7e99-4923-9a2f-a5d7d91deb48)
-
-![image](https://github.com/user-attachments/assets/582a382f-387f-42ef-9270-d1addaddbe25)
-
+---
 
 ### 🧠 SupabaseService (Servicio Central)
 
-Contiene la lógica de interacción con Supabase:
+Contiene toda la lógica de interacción con Supabase:
 
-- `signUp()`, `signIn()`, `signOut()`, `getUser()`: Autenticación
-- `uploadFile()`: Subir archivos
-- `getFiles()`: Listar archivos
-- `deleteFile()`: Eliminar archivos
-- `listenToFileChanges()`: Escucha en tiempo real (si aplica)
+- `signUp()`: Registro
+- `signIn()`: Inicio de sesión
+- `signOut()`: Cierre de sesión
+- `getUser()`: Obtener usuario actual
+- `sendMessage()`: Enviar mensaje
+- `getMessagesRealtime()`: Recibir mensajes en tiempo real
 
-📸 **Capturas del servicio**
+📸 **Captura del servicio Supabase**
 
-![image](https://github.com/user-attachments/assets/33da0623-142c-4966-a0e8-022db19e0250)
+![image](https://github.com/user-attachments/assets/24c9d113-4a7c-4368-9f81-714f0e4249c8)
 
-![image](https://github.com/user-attachments/assets/d188b9d6-ba70-44f3-b607-1622a0fb2632)
+![image](https://github.com/user-attachments/assets/226a9ed6-335a-477e-b124-f5e7ab65da3f)
 
-![image](https://github.com/user-attachments/assets/3ac7f298-0a8a-465b-9c21-cedf2e13e092)
+![image](https://github.com/user-attachments/assets/80ca72ce-04ec-419c-a436-afa2d2bed729)
 
-![image](https://github.com/user-attachments/assets/7916c0bb-dde6-4150-86a3-20089c375eda)
-
-![image](https://github.com/user-attachments/assets/4256fe2d-0174-4e0f-b129-e8e78b20c142)
-
-![image](https://github.com/user-attachments/assets/69301c23-66df-4989-8c81-05339459848d)
-
-![image](https://github.com/user-attachments/assets/66a061b6-8c8c-4f6e-9a77-54a1fb1508bd)
-
-![image](https://github.com/user-attachments/assets/b3b9617b-d0ea-4d20-8d6e-0169a9bba61e)
-
-![image](https://github.com/user-attachments/assets/176170b9-b5ec-432e-8878-6bd1a031bb9f)
-
-![image](https://github.com/user-attachments/assets/8e9e785d-dbd6-4590-b991-93dcdf5481f6)
-
+![image](https://github.com/user-attachments/assets/6ef926a3-1884-4932-a6e1-c20095b99fc1)
 
 ---
 
 ### 🔒 Auth Guard
 
-Protección de la ruta `/files` para evitar accesos sin autenticación.
-
-📸 **Captura del guard**
+Protección de la ruta `/chat` usando `authGuard`:
 
 ![image](https://github.com/user-attachments/assets/7f9c5f17-0d00-4910-888e-176175cbe617)
+
+![image](https://github.com/user-attachments/assets/5898c662-1f64-450f-98cc-85fc2434f48e)
 
 ---
 
 ## 🧭 Rutas
 
-Configuración de rutas (`app.routes.ts`):
+Configuración principal de rutas (`app.routes.ts`):
 
 - `/auth`: Página de autenticación
-- `/files`: Página protegida para gestión de archivos
-- `/file-modal`: Página protegida para subir el archivo
+- `/chat`: Página protegida (chat)
 
-![image](https://github.com/user-attachments/assets/ce3f13d8-947b-4b89-a0dd-a0ca2cc6ca86)
+![image](https://github.com/user-attachments/assets/28934d5f-ac6c-48ae-ad62-7d0d8fee5ffb)
 
 ---
 
 ## ⚙️ Variables de Entorno
+
+Las variables necesarias se encuentran en:
 
 ```ts
 // src/environments/environment.ts
@@ -170,7 +145,9 @@ export const environment = {
 };
 ```
 
-✅ Este archivo está ignorado en `.gitignore`, y se proporciona una plantilla:
+🛡️ **¡Importante!**
+- Este archivo está ignorado en `.gitignore`
+- Se proporciona un ejemplo editable en:
 
 ```
 src/environments/environment.example.ts
@@ -180,26 +157,27 @@ src/environments/environment.example.ts
 
 ## ✅ Funcionalidades Implementadas
 
-- [x] Registro e inicio de sesión
-- [x] Cierre de sesión
+- [x] Registro de usuarios
+- [x] Inicio de sesión y cierre
 - [x] Validación de formularios
 - [x] Protección de rutas
-- [x] Visualización y carga de archivos
-- [x] Eliminación de archivos
-- [x] Integración visual tipo galería
-- [x] Preparado para escucha en tiempo real
+- [x] Obtención del usuario actual
+- [x] Envío y recepción de mensajes en tiempo real
+- [x] Visualización de usuario conectado
 
 ---
 
 ## 📝 Notas Finales
 
-- Desarrollado con **Angular Standalone Components**
-- Supabase maneja autenticación y almacenamiento de forma segura
-- Puede expandirse fácilmente para soporte de carpetas, metadatos, filtros o categorías
-- Ideal como base para apps de portafolio, gestión documental, tareas con archivos, etc.
+- El proyecto está desarrollado completamente con **Angular Standalone Components**
+- Supabase gestiona automáticamente la sesión y autenticación
+- Supabase por defecto activa RSL es decir las políticas para manipular la tabla, en caso de dejar vácio este apartado, no se podrá interactuar con la misma
+- Desactivar RSL para poder acceder a las operaciones de la tabla
+- Activar RealTime para cada vez que se haga alguna manipulación se vea actualizado los cambios, dado al comportamiento de supabase
+- El sistema está preparado como base para futuras funcionalidades más avanzadas (como chats privados, carga de archivos, etc.)
 
 ---
 
 ## 👨‍💻 Autor
 
-> Richard Soria - Desarrollo de Aplicaciones Móviles
+> Richard Soria - Desarollo de Aplicaciones Móviles
