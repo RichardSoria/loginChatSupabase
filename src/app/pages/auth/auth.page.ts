@@ -47,7 +47,6 @@ export class AuthPage implements OnInit {
       await loading.dismiss();
       this.supabaseService.listenToMessages();
       this.credentials.reset(); 
-      this.router.navigate(['/chat']);
     }).catch(async (err) => {
       await loading.dismiss();
       this.showError("Error al iniciar sesión", err.message);
